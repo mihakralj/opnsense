@@ -33,7 +33,7 @@ var exportCmd = &cobra.Command{
   opnsense export                Exports XML patch from 'config.xml' to 'staging.xml'`,
 
 	Run: func(cmd *cobra.Command, args []string) {
-		internal.SetFlags(verbose, force, host, configfile, nocolor, depth, xmlFlag, yamlFlag, jsonFlag)
+		internal.SetFlags(verbose, force, host, outfile, configfile, nocolor, depth, xmlFlag, yamlFlag, jsonFlag)
 		var oldconfig, newconfig, path string
 
 		switch len(args) {

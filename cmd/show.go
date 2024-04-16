@@ -59,7 +59,6 @@ var showCmd = &cobra.Command{
 
 		deltadoc := internal.DiffXML(configdoc, stagingdoc, true)
 		internal.PrintDocument(deltadoc, path)
-
 	},
 }
 

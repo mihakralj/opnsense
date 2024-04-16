@@ -36,7 +36,7 @@ Once the patch is imported, it is added to currently staged changes in 'staging.
 		if !cmd.Flag("depth").Changed {
 			depth = 5
 		}
-		internal.SetFlags(verbose, force, host, configfile, nocolor, depth, xmlFlag, yamlFlag, jsonFlag)
+		internal.SetFlags(verbose, force, host, outfile, configfile, nocolor, depth, xmlFlag, yamlFlag, jsonFlag)
 
 		patchdoc := etree.NewDocument()
 

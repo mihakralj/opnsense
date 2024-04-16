@@ -20,6 +20,7 @@ var (
 	force      bool
 	host       string
 	configfile string
+	outfile    string
 	nocolor    bool
 	depth      int
 	xmlFlag    bool
@@ -27,13 +28,14 @@ var (
 	jsonFlag   bool
 )
 
-func SetFlags(v int, f bool, h string, config string, nc bool, dpt int, x bool, y bool, j bool) {
+func SetFlags(v int, f bool, h string, of string, config string, nc bool, dpt int, x bool, y bool, j bool) {
 	if v < 1 || v > 5 {
 		Log(1, "invalid verbosity level %d. It should be between 1 and 5", v)
 	}
 	verbose = v
 	force = f
 	host = h
+	outfile = of
 	configfile = config
 	nocolor = nc
 	depth = dpt
