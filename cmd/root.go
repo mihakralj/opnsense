@@ -30,6 +30,7 @@ var (
 	host        string
 	configfile  string
 	stagingfile string
+	outfile     string
 	nocolor     bool
 	depth       int = 1
 	xmlFlag     bool
@@ -40,6 +41,7 @@ var (
 
 func init() {
 	rootCmd.PersistentFlags().StringVarP(&host, "target", "t", "", "Specify target host (user@hostname[:port])")
+	rootCmd.PersistentFlags().StringVarP(&outfile, "outfile", "o", "", "Save output of the command into a specified file")
 	rootCmd.PersistentFlags().IntVarP(&verbose, "verbose", "v", 1, "Set verbosity level (range: 1-5, default: 1)")
 	rootCmd.PersistentFlags().BoolVarP(&nocolor, "no-color", "n", false, "Disable ANSI color output")
 	rootCmd.PersistentFlags().BoolVarP(&xmlFlag, "xml", "x", false, "Output results in XML format")
@@ -52,7 +54,7 @@ func init() {
 	cobra.OnInitialize(func() {
 		configfile = "/conf/config.xml"
 		stagingfile = "/conf/staging.xml"
-		internal.SetFlags(verbose, force, host, configfile, nocolor, depth, xmlFlag, yamlFlag, jsonFlag)
+		internal.SetFlags(verbose, force, host, outfile, configfile, nocolor, depth, xmlFlag, yamlFlag, jsonFlag)
 		//other initializations
 	})
 }

@@ -36,7 +36,7 @@ var sysinfoCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		if changed := cmd.Flags().Changed("depth"); !changed {
 			depth = 2
-			internal.SetFlags(verbose, force, host, configfile, nocolor, depth, xmlFlag, yamlFlag, jsonFlag)
+			internal.SetFlags(verbose, force, host, outfile, configfile, nocolor, depth, xmlFlag, yamlFlag, jsonFlag)
 		}
 
 		path := "system"

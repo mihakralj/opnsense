@@ -17,6 +17,7 @@ package internal
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/beevik/etree"
 )
@@ -33,5 +34,16 @@ func PrintDocument(doc *etree.Document, path string) {
 	default:
 		output = ConfigToTTY(doc, path)
 	}
-	fmt.Println(output)
+
+	if len(outfile) > 0 {
+		f, err := os.Create(outfile)
+
+		if err != nil {
+			Log(1, "%v", err)
+		}
+
+		fmt.Fprintln(f, output)
+	} else {
+		fmt.Println(output)
+	}
 }
