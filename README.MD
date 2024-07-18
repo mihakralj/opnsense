@@ -35,6 +35,7 @@
 - **`--no-color (-n)`**: Disable ANSI color output
 - **`--force (-f)`**: Removes checks and prompts before `config.xml` or `configctl` are touched.
 - **`--verbose (-v)`**: Sets verbosity (1=error, 2=warning, 3=info, 4=note, 5=debug).
+- **`--outfile (-o)`**: Save output of the command into a specified file
 - **`--no-color (-n)`**: Removes ANSI colors from the printout.
 - **`--xml (-x)`**: Displays results in XML format.
 - **`--json (-j)`**: Displays results in JSON format.
